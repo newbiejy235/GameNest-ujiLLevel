@@ -1,0 +1,224 @@
+let data = [
+  {
+    id: 1,
+    title: "Cyberpunk 2077",
+    rating: 86,
+    release_date: "2020-12-10",
+    price: 599000,
+    discount: 50,
+    genre: ["RPG", "Open World"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+    description:
+      "Step into Night City, a sprawling futuristic metropolis driven by power, technology, and ambition. As V, a mercenary chasing a one-of-a-kind implant, you’ll take on dangerous contracts, build your reputation, and shape your story through meaningful choices. With deep customization and a reactive world, every decision matters.",
+  },
+  {
+    id: 2,
+    title: "Red Dead Redemption 2",
+    rating: 97,
+    release_date: "2019-12-05",
+    price: 699000,
+    discount: 60,
+    genre: ["Action", "Open World"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
+    description:
+      "Live the life of an outlaw in the fading Wild West as Arthur Morgan. Explore a vast open world filled with dynamic wildlife, intense shootouts, and meaningful choices that shape your honor and relationships in a cinematic experience.",
+  },
+  {
+    id: 3,
+    title: "Elden Ring",
+    rating: 96,
+    release_date: "2022-02-25",
+    price: 799000,
+    discount: 30,
+    genre: ["RPG", "Souls-like"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+    description:
+      "Rise as a Tarnished and explore a vast world filled with danger and mystery. Face brutal enemies, uncover hidden paths, and shape your own journey in a land governed by ancient power and challenging combat.",
+  },
+  {
+    id: 4,
+    title: "Hades",
+    rating: 93,
+    release_date: "2020-09-17",
+    price: 289000,
+    discount: 40,
+    genre: ["Roguelike", "Action"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+    description:
+      "Battle your way out of the Underworld as Zagreus in this fast-paced rogue-like. Each run offers new abilities, evolving challenges, and story progression, making every escape attempt unique.",
+  },
+  {
+    id: 5,
+    title: "Stardew Valley",
+    rating: 89,
+    release_date: "2016-02-26",
+    price: 115000,
+    discount: 20,
+    genre: ["Simulation", "Casual"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+    description:
+      "Build your dream farm, grow crops, raise animals, and connect with a charming community. Relax, explore, and create your own peaceful life in this beloved farming simulator.",
+  },
+  {
+    id: 6,
+    title: "Counter-Strike 2",
+    rating: 80,
+    release_date: "2023-09-27",
+    price: 0,
+    discount: 0,
+    genre: ["FPS", "Competitive"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
+    description:
+      "The next evolution of the legendary tactical shooter. Precision gunplay, teamwork, and strategy define every round in this competitive multiplayer experience.",
+  },
+  {
+    id: 7,
+    title: "The Witcher 3: Wild Hunt",
+    rating: 93,
+    release_date: "2015-05-19",
+    price: 499000,
+    discount: 80,
+    genre: ["RPG", "Open World"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+    description:
+      "Become Geralt of Rivia, a monster hunter navigating a morally complex world. Hunt beasts, uncover secrets, and make decisions that shape the fate of kingdoms.",
+  },
+  {
+    id: 8,
+    title: "GTA V",
+    rating: 96,
+    release_date: "2015-04-14",
+    price: 329000,
+    discount: 50,
+    genre: ["Action", "Open World"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+    description:
+      "Dive into the criminal world of Los Santos through three unique characters. Plan heists, explore a massive city, and engage in endless activities across a dynamic open world.",
+  },
+  {
+    id: 9,
+    title: "Dota 2",
+    rating: 85,
+    release_date: "2013-07-09",
+    price: 0,
+    discount: 0,
+    genre: ["MOBA"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg",
+    description:
+      "Enter a competitive battlefield where teamwork and strategy decide victory. Master heroes, coordinate with your team, and outplay your opponents in intense matches.",
+  },
+  {
+    id: 10,
+    title: "Sekiro: Shadows Die Twice",
+    rating: 90,
+    release_date: "2019-03-22",
+    price: 649000,
+    discount: 35,
+    genre: ["Action", "Souls-like"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg",
+    description:
+      "Master precise combat in feudal Japan as a shinobi seeking revenge. Every fight demands timing, focus, and skill in this challenging action-adventure.",
+  },
+  {
+    id: 11,
+    title: "Terraria",
+    rating: 91,
+    release_date: "2011-05-16",
+    price: 95000,
+    discount: 50,
+    genre: ["Sandbox", "Adventure"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg",
+    description:
+      "Dig, build, and explore a vast sandbox world filled with treasures, enemies, and endless creativity.",
+  },
+  {
+    id: 12,
+    title: "Among Us",
+    rating: 78,
+    release_date: "2018-11-16",
+    price: 39000,
+    discount: 0,
+    genre: ["Party", "Multiplayer"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg",
+    description:
+      "Work together or betray your friends in this social deduction game. Complete tasks, uncover impostors, and survive the chaos.",
+  },
+  {
+    id: 13,
+    title: "Forza Horizon 5",
+    rating: 92,
+    release_date: "2021-11-09",
+    price: 699000,
+    discount: 45,
+    genre: ["Racing", "Open World"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg",
+    description:
+      "Drive across vibrant landscapes in Mexico with hundreds of cars. Experience high-speed racing and dynamic events in an open world full of challenges.",
+  },
+  {
+    id: 14,
+    title: "Resident Evil 4 Remake",
+    rating: 95,
+    release_date: "2023-03-24",
+    price: 759000,
+    discount: 20,
+    genre: ["Horror", "Action"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
+    description:
+      "Survive a terrifying mission in a reimagined horror classic. Face intense combat and chilling environments in a gripping experience.",
+  },
+  {
+    id: 15,
+    title: "Monster Hunter: World",
+    rating: 90,
+    release_date: "2018-08-09",
+    price: 550000,
+    discount: 60,
+    genre: ["Action", "Co-op"],
+    platform: ["PC"],
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg",
+    description:
+      "Enter a vast new world and take on the role of a hunter tracking massive monsters. Use strategy, skill, and a wide arsenal of weapons to defeat powerful creatures in a dynamic ecosystem. Each hunt delivers a challenging and rewarding experience, whether solo or with friends.",
+  },
+];
+
+let idCard = 15;
+
+const filter = data.find((u) => u.id === idCard);
+const  index = data.findIndex((u) => u.id === idCard)
+
+data.splice(index, 1)
+
+console.log(index);
+console.log(data);
+
+

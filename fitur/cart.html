@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameNest</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+  </head>
+  <body class="bg-[#0B0E14] text-gray-300">
+    <div class="flex p-6 gap-10">
+      <section
+        class="w-72 bg-[#12161D] h-screen rounded-3xl flex flex-col p-6 shadow-2xl border border-white/5"
+      >
+        <div class="flex items-center mt-2 mb-5 text-white p-2 mr-2">
+          <img
+            class="w-full object-cover"
+            src="../asset/background-game.png"
+            alt=""
+          />
+        </div>
+
+        <div class="space-y-10 mb-8">
+          <a
+            class="flex items-center gap-4 px-4 py-3 hover:bg-[#1F2630] hover:text-white rounded-xl transition-all group"
+            href="./home2.html"
+          >
+            <span><i data-lucide="house"></i> </span>
+            <h1>Home</h1>
+          </a>
+          <a
+            class="flex items-center gap-4 px-4 py-3 hover:bg-[#1F2630] hover:text-white rounded-xl transition-all group"
+            href="./library.html"
+          >
+            <span><i data-lucide="Library"></i> </span>
+            <h1>Library</h1>
+          </a>
+        </div>
+      </section>
+
+      <div class="w-full flex-1 space-y-24">
+        <nav
+          class="w-full h-32 rounded items-center flex gap-5 justify-between"
+        >
+          <form>
+            <input
+              id="userSearch"
+              class="h-14 w-96 bg-[#12161D] rounded-3xl px-4 border border-white/15 hover:bg-white/8"
+              type="search"
+              placeholder="search..."
+            />
+          </form>
+          <div class="flex gap-5">
+            <button
+              disabled
+              class="h-14 w-14 bg-[#12161D] border border-white/15 rounded-2xl flex items-center justify-center hover:cursor-not-allowed"
+            >
+              <i data-lucide="shopping-bag"></i>
+            </button>
+            <a
+            href="./wishlist.html"
+              class="h-14 w-14 bg-[#12161D] border border-white/15 rounded-2xl flex items-center justify-center hover:cursor-pointer hover:bg-white/8"
+            >
+              <i data-lucide="heart-plus"></i>
+            </a>
+
+            <div
+              class="flex items-center w-40 h-14 rounded-2xl bg-[#12161D] border border-white/15 px-4 gap-5"
+            >
+              <img
+                class="rounded-full border border-white/15 w-10 h-10"
+                src="https://i.pinimg.com/736x/20/a6/ad/20a6ad88613e5f8c062d4b4fd5e5d47a.jpg"
+                alt=""
+              />
+              <h1 id="message"></h1>
+            </div>
+          </div>
+        </nav>
+
+        <div class="flex">
+          <div class="flex-1">
+            <span id="seeAll" class="hidden items-center">
+              <i data-lucide="circle-small"></i>
+              <a
+                class="text-[10px] font-bold uppercase text-gray-500 hover:text-blue-500 hover:underline hover:translate-y-0.5"
+                href="./cart.html"
+                >See all</a
+              >
+            </span>
+            <div id="game-container" class="flex">
+              <div
+                class="grid grid-cols-3 gap-10 p-3 rounded-2xl"
+                id="homePages"
+              ></div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col px-5 py-5 min-w-[500px] h-auto text-left space-y-10"
+          >
+            <h1 class="text-2xl font-semibold">Games and Apps Summary</h1>
+            <span class="flex justify-between">
+              <p class="font-semibold">price:</p>
+              <span id="harga"></span>
+            </span>
+            <hr />
+            <span class="flex justify-between items-center">
+              <p class="font-semibold mt-5">Subtotal:</p>
+              <span id="total"></span>
+            </span>
+            <div class="flex justify-center items-center">
+              <button
+                onclick="payment()"
+                class="bg-sky-500 rounded px-10 text-black p-4 w-full text-md hover:bg-sky-300 hover:cursor-pointer transition-all duration-300"
+              >
+                Chekkout Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../src/cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Doto:wght@100..900&family=Jersey+10&family=Pixelify+Sans:wght@400..700&family=Playwrite+DE+SAS:wght@100..400&family=Playwrite+NO:wght@100..400&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+@theme {
+  --font-medieval: "Cinzel", serif;
+}
+
+@layer utilities {
+  .font-medieval {
+    font-family: var(--font-medieval);
+  }
+}
+
+
+@utility custom-scrollbar {
+  /* Untuk Firefox */
+  scrollbar-width: none;
+
+  /* Untuk Internet Explorer dan Edge lama */
+  -ms-overflow-style: none;
+
+  /* Untuk Chrome, Safari, dan Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

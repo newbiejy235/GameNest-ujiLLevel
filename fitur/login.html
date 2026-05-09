@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+  </head>
+  <body class="min-h-screen flex flex-col justify-center items-center">
+    <div class="bg-gray-900 rounded-2xl w-96 p-5 h-auto">
+      <div
+        class="grid grid-cols-1 items-center gap-5 justify-center text-center"
+      >
+        <h1 class="text-2xl text-white">Welcome To Toko Online</h1>
+        <input
+          id="username"
+          class="w-full p-2 px-2 rounded-2xl border bg-white"
+          placeholder="masukan username"
+          type="text"
+        />
+        <input
+          id="password"
+          class="w-full p-2 px-2 rounded-2xl border bg-white"
+          placeholder="masukan password"
+          type="password"
+        />
+        <button
+          class="text-2xl text-white bg-green-600 rounded-2xl mx-5"
+          onclick="getAuth('login')"
+          id="getLogin"
+        >
+          Login
+        </button>
+        <button
+          class="text-2xl text-white bg-green-600 rounded-2xl mx-5"
+          onclick="getAuth('register')"
+          id="getRegister"
+        >
+          register
+        </button>
+        <button id="changes" class="text-blue-700 underline hover:cursor-pointer">no have account? create one</button>
+      </div>
+    </div>
+    <script src="../src/auth.js"></script>
+  </body>
+</html>
