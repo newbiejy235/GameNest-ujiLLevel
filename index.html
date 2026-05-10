@@ -1,10 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body class="bg-[#0B0E11] text-gray-300">
     <header>
@@ -21,8 +25,8 @@
         <div class="flex items-center gap-2 font-semibold">
           <div class="flex gap-4 mr-2">
             <a class="hover:text-white hover:underline" href="#">Browse</a>
-            <a class="hover:text-white hover:underline" href="#">Deals</a>
-            <a class="hover:text-white hover:underline" href="#"
+            <a class="hover:text-white hover:underline" href="#Deals">Deals</a>
+            <a class="hover:text-white hover:underline" href="#newRealese"
               >New realease</a
             >
           </div>
@@ -30,12 +34,12 @@
           <span
             class="hover:-translate-y-0.5 bg-sky-500 p-2 rounded text-white"
           >
-            <a href="#">Login</a>
+            <a href="./fitur/login.html">Login</a>
           </span>
           <span
             class="hover:-translate-y-0.5 bg-[#67C090] p-2 rounded text-white"
           >
-            <a href="#">Register</a>
+            <a href="./fitur/login.html">Register</a>
           </span>
         </div>
       </nav>
@@ -54,7 +58,7 @@
             hidden masterpieces, and join a growing gaming community.
           </article>
           <a
-            href="#"
+            href="./fitur/preview.html"
             class="bg-sky-500 rounded-2xl p-2 mt-10 w-full text-center font-md font-semibold"
             >Discover</a
           >
@@ -81,15 +85,15 @@
         </div>
       </section>
 
-      <section class="flex flex-col px-52 mt-20 text-left">
+      <section id="Deals" class="flex flex-col px-52 mt-20 text-left">
         <h1 class="text-2xl font-semibold mb-5">Popular games🔥</h1>
 
         <div class="flex justify-center">
-          <div class="grid grid-cols-4 gap-16 p-3 rounded-2xl" id="card"></div> 
+          <div class="grid grid-cols-4 gap-16 p-3 rounded-2xl" id="card"></div>
         </div>
       </section>
 
-      <section class="flex flex-col px-52 mt-32 text-left">
+      <section id="newRealese" class="flex flex-col px-52 mt-32 text-left">
         <h1 class="text-2xl font-semibold mb-5">New Realese ✨</h1>
 
         <div class="flex justify-center">
@@ -98,8 +102,146 @@
       </section>
 
       <section id="ulasan" class="px-6 py-16 bg-[#0B0E11] text-white"></section>
-      
+
+      <section class="flex flex-col px-52 mt-20">
+        <h1 class="mb-2">Give uss Feedback</h1>
+        <form
+          class="flex flex-col h-80 rounded-2xl w-full justify-center items-center gap-5"
+          action=""
+        >
+          <input
+            class="h-80 w-full bg-white border-gray-800/50 rounded-2xl"
+            type="text"
+          />
+
+          <button
+            class="bg-green-500 p-2 rounded-2xl font-semibold w-52"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </section>
     </main>
+
+    <footer
+      class="bg-[#0b0f19] text-white px-6 py-16 border-t border-cyan-500/10 mt-10"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Top Footer -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div class="flex flex-col gap-4">
+            <h1 class="text-3xl font-bold">
+              GameNest<span class="text-cyan-400">.</span>
+            </h1>
+
+            <p class="text-gray-400 leading-relaxed text-sm">
+              Discover immersive adventures, connect with passionate gamers, and
+              explore the latest worlds in modern gaming.
+            </p>
+
+            <div class="flex items-center gap-4 mt-2">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center hover:bg-cyan-400 hover:text-black transition"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center hover:bg-cyan-400 hover:text-black transition"
+              >
+                <i class="fa-brands fa-square-instagram"></i>
+              </a>
+
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center hover:bg-cyan-400 hover:text-black transition"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div>
+            <h2 class="text-lg font-semibold mb-5">Navigation</h2>
+
+            <ul class="flex flex-col gap-3 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition"> Browse </a>
+              </li>
+
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition"> Deals </a>
+              </li>
+
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition">
+                  New Releases
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h2 class="text-lg font-semibold mb-5">Support</h2>
+
+            <ul class="flex flex-col gap-3 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition">
+                  Help Center
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition"> Contact </a>
+              </li>
+
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition">
+                  Terms of Service
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="hover:text-cyan-400 transition">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h2 class="text-lg font-semibold mb-5">About GameNest</h2>
+
+            <p class="text-gray-400 text-sm mb-4">
+              Your gateway to immersive worlds, legendary adventures, and modern
+              gaming experiences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="border-t border-cyan-500/10 mt-14 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500"
+        >
+          <p>© 2026 GameNest. All rights reserved.</p>
+
+          <div class="flex items-center gap-5">
+            <a href="#" class="hover:text-cyan-400 transition"> Terms </a>
+
+            <a href="#" class="hover:text-cyan-400 transition"> Privacy </a>
+
+            <a href="#" class="hover:text-cyan-400 transition"> Cookies </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./src/main.js"></script>
   </body>
 </html>

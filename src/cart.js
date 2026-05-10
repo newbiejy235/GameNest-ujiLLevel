@@ -1,5 +1,6 @@
 let cart = JSON.parse(localStorage.getItem("keranjangkku")) || [];
 let myLibrary = JSON.parse(localStorage.getItem("myLibraryy")) || [];
+let chosen = JSON.parse(localStorage.getItem("chosenOne")) || [];
 
 function card(data) {
   const finalPrice =
@@ -9,6 +10,10 @@ function card(data) {
 
   if (data.price <= 0) {
     return `
+    <div class="flex items-center bg-white/40 rounded-2xl" >
+
+   <input data-id="${data.id}" class="scale-150 text-blue-600 mx-2 border border-black " type="checkbox">
+
     <div  class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
 
       <div class="relative">
@@ -40,11 +45,16 @@ function card(data) {
         
       </div>
     </div>
+    </div>
     `;
   }
 
   if (data.discount > 0) {
     return `
+    <div class="flex items-center bg-white/40 rounded-2xl gap-2 " >
+
+    <input data-id="${data.id}" class="scale-150 text-blue-600 mx-2 border border-black " type="checkbox">
+
     <div class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
 
       <div class="relative">
@@ -86,9 +96,14 @@ function card(data) {
         
       </div>
     </div>
+     </div>
     `;
   } else {
     return `
+    <div class="flex items-center bg-white/40 rounded-2xl" >
+
+    <input data-id="${data.id}" class="scale-150 text-blue-600 mx-2 border border-black " type="checkbox">
+
     <div class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
 
       <div class="relative">
@@ -117,6 +132,7 @@ function card(data) {
         
       </div>
     </div>
+     </div>
     `;
   }
 }
@@ -161,27 +177,51 @@ function PriceGames() {
   let subTotal = 0;
   let diskon = 0;
 
-  cart.forEach((element) => {
+  chosen.forEach((element) => {
     if (element.discount > 0) {
       const diskonGames = Math.floor(
         element.price - (element.price * element.discount) / 100,
       );
       let getDiscountGames = diskonGames;
       diskon = diskon + getDiscountGames;
-      console.log(diskon);
     } else {
       subTotal = subTotal + element.price;
     }
   });
   subTotal = subTotal + diskon;
-  console.log(subTotal);
   Harga.textContent = `Rp ${subTotal.toLocaleString("id-ID")}`;
   total.textContent = `Rp ${subTotal.toLocaleString("id-ID")}`;
 }
+// function PriceGames() {
+//   const isChecked = document.getElementById("checkbox");
+
+//   const Harga = document.getElementById("harga");
+//   const total = document.getElementById("total");
+//   let subTotal = 0;
+//   let diskon = 0;
+
+//   cart.forEach((element) => {
+//     if (element.discount > 0) {
+//       const diskonGames = Math.floor(
+//         element.price - (element.price * element.discount) / 100,
+//       );
+//       let getDiscountGames = diskonGames;
+//       diskon = diskon + getDiscountGames;
+//       console.log(diskon);
+//     } else {
+//       subTotal = subTotal + element.price;
+//     }
+//   });
+//   subTotal = subTotal + diskon;
+//   console.log(subTotal);
+//   Harga.textContent = `Rp ${subTotal.toLocaleString("id-ID")}`;
+//   total.textContent = `Rp ${subTotal.toLocaleString("id-ID")}`;
+// }
 
 function saveToLocal() {
   localStorage.setItem("keranjangkku", JSON.stringify(cart));
   localStorage.setItem("myLibraryy", JSON.stringify(myLibrary));
+  localStorage.setItem("chosenOne", JSON.stringify(chosen));
 }
 
 function payment() {
@@ -199,24 +239,53 @@ function payment() {
 }
 
 function remove(id) {
-  window.location.reload();
   const index = cart.findIndex((u) => u.id === id);
   cart.splice(index, 1);
+  chosen.splice(index, 1);
   console.log(cart);
+  render("homePages", cart);
+  PriceGames()
   saveToLocal();
+}
+
+function getPriceSelected() {
+  const isChecked = document.querySelectorAll('input[type="checkbox"]');
+
+  isChecked.forEach((checkbox) => {
+    checkbox.addEventListener("change", (e) => {
+      const id = Number(e.target.dataset.id);
+      const dataId = cart.find((u) => u.id == id);
+      const isExist = chosen.some((u) => u.id === id);
+      if (e.target.checked) {
+        if (!isExist) {
+          chosen.push(dataId);
+          saveToLocal();
+        } else {
+          console.log("udH ada");
+          return;
+        }
+      } else {
+        const index = chosen.findIndex((u) => u.id === id);
+        chosen.splice(index, 1);
+        saveToLocal();
+      }
+      PriceGames();
+    });
+  });
 }
 
 function getAllData() {
   render("homePages", cart);
   getUserName("message");
   search();
-
   lucide.createIcons();
-  PriceGames();
+
   console.log("cart", cart);
   console.log("library", myLibrary);
   //   myLibrary = [];
   //   saveToLocal();
+  getPriceSelected();
+  console.log(chosen);
 }
 
 getAllData();

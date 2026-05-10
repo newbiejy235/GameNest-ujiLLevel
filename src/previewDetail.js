@@ -1,5 +1,3 @@
-let cart = JSON.parse(localStorage.getItem("keranjangkku")) || [];
-let myWishlist = JSON.parse(localStorage.getItem("myWishlist")) || [];
 let dataGlobal = [];
 
 function card(data) {
@@ -57,7 +55,7 @@ function card(data) {
     <div class="max-w-6xl mx-auto">
       
       <!-- Navigasi Simple -->
-      <a href="home2.html" class="text-sm text-gray-200 pb-10 px-2 ">
+      <a href="preview.html" class="text-sm text-gray-200 pb-10 px-2 ">
         Home > Games > <span class="text-gray-500 font-medium">${data.title}</span>
       </a>
 
@@ -70,7 +68,7 @@ function card(data) {
             class="w-full h-auto rounded-xl object-cover shadow-inner" 
             alt="${data.title}"
           >
-          <button onclick="addToWishlist(${data.id})  " class="absolute top-28 bg-black/60 p-2 rounded-full hover:bg-black text-white hover:cursor-pointer">
+          <button onclick="alertLogin()" class="absolute top-28 bg-black/60 p-2 rounded-full hover:bg-black text-white hover:cursor-pointer">
          <i class="w-4 h-4" data-lucide="heart-plus"></i>  
         </button>
         </div>
@@ -97,8 +95,8 @@ function card(data) {
             ${priceDisplay}
           </div>
 
-          <button onclick="keranjang(${data.id})" 
-            class="w-full bg-[#4CAF50] hover:bg-[#43A047] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 mb-8 shadow-lg shadow-green-100 flex justify-center items-center gap-2">
+          <button onclick="alertLogin()" 
+            class="hover:cursor-pointer w-full bg-[#4CAF50] hover:bg-[#43A047] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 mb-8 shadow-lg shadow-green-100 flex justify-center items-center gap-2">
             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
             Add to Cart
           </button>
@@ -135,13 +133,13 @@ function cardRecomendation(data) {
 
   if (data.price <= 0) {
     return `
-    <a href="details.html?id=${data.id}" class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
+    <a href="previewDetails.html?id=${data.id}" class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
 
       <div class="relative">
         <img src="${data.thumbnail}" class="w-full h-40 object-cover">
 
         <!-- Wishlist -->
-        <button class="absolute top-2 right-2 bg-black/60 p-2 rounded-full hover:bg-black">
+        <button onclick="alertLogin()" class="absolute top-2 right-2 bg-black/60 p-2 rounded-full hover:bg-black">
          <i class="w-4 h-4" data-lucide="heart-plus"></i>  
         </button>
 
@@ -156,8 +154,8 @@ function cardRecomendation(data) {
           ${data.title}
         </h1>
 
-        <button onclick="keranjang(${data.id})"
-          class="mt-2 bg-blue-600 hover:bg-blue-500 text-sm py-1 rounded">
+        <button onclick="alertLogin()"
+          class="mt-2 hover:cursor-pointer bg-blue-600 hover:bg-blue-500 text-sm py-1 rounded">
           Add to Cart
         </button>
       </div>
@@ -167,13 +165,13 @@ function cardRecomendation(data) {
 
   if (data.discount > 0) {
     return `
-    <a href="details.html?id=${data.id}" class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
+    <a href="previewDetails.html?id=${data.id}" class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
 
       <div class="relative">
         <img src="${data.thumbnail}" class="w-full h-40 object-cover">
 
         <!-- Wishlist -->
-        <button class="absolute top-2 right-2 bg-black/60 p-2 rounded-full hover:bg-black">
+        <button onclick="alertLogin()" class="absolute top-2 right-2 bg-black/60 p-2 rounded-full hover:bg-black">
            <i class="w-4 h-4" data-lucide="heart-plus"></i>  
         </button>
 
@@ -199,7 +197,8 @@ function cardRecomendation(data) {
         </div>
 
         <button
-          class="mt-2 bg-blue-600 hover:bg-blue-500 text-sm py-1 rounded">
+        onclick="alertLogin()"
+          class="mt-2 hover:cursor-pointer bg-blue-600 hover:bg-blue-500 text-sm py-1 rounded">
           Add to Cart
         </button>
       </div>
@@ -207,13 +206,13 @@ function cardRecomendation(data) {
     `;
   } else {
     return `
-    <a href="details.html?id=${data.id}" class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
+    <a href="previewDetails.html?id=${data.id}" class="flex-shrink-0 w-72 bg-[#1b2838] text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition">
 
       <div class="relative">
         <img src="${data.thumbnail}" class="w-full h-40 object-cover">
 
         <!-- Wishlist -->
-        <button class="absolute top-2 right-2 bg-black/60 p-2 rounded-full hover:bg-black">
+        <button onclick="alertLogin()" class="absolute top-2 right-2 bg-black/60 p-2 rounded-full hover:bg-black">
            <i class="w-4 h-4" data-lucide="heart-plus"></i>  
         </button>
       </div>
@@ -227,8 +226,9 @@ function cardRecomendation(data) {
           Rp ${data.price}
         </span>
 
-        <button
-          class="mt-2 bg-blue-600 hover:bg-blue-500 text-sm py-1 rounded">
+       <button
+        onclick="alertLogin()"
+          class="mt-2 hover:cursor-pointer bg-blue-600 hover:bg-blue-500 text-sm py-1 rounded text-center">
           Add to Cart
         </button>
       </div>
@@ -261,38 +261,8 @@ function randomRecomendation(data) {
   renderRecomendation("recomendation", rekomendation);
 }
 
-function saveToLocal() {
-  localStorage.setItem("keranjangkku", JSON.stringify(cart));
-  localStorage.setItem("myWishlist", JSON.stringify(myWishlist));
-}
-
-function keranjang(id) {
-  const selectedGame = dataGlobal.find((g) => g.id == id);
-  const p = cart.some((U) => id == U.id);
-  if (!p) {
-    cart.push(selectedGame);
-    alert("berhasil di tambahkan ke cart")
-    console.log(cart);
-    saveToLocal();
-  } else {
-    alert("game sudah di tambahkan ke cart cart");
-    return;
-  }
-}
-
-function addToWishlist(id) {
-  const selectedGame = dataGlobal.find((g) => g.id == id);
-  const p = myWishlist.some((U) => id == U.id);
-  if (!p) {
-    alert("berhasil ditambahakan ke wishlist");
-    myWishlist.push(selectedGame);
-    console.log(myWishlist);
-    saveToLocal();
-    console.log(cart);
-  } else {
-    alert("games sudah ada  di wishlist");
-    return;
-  }
+function alertLogin() {
+  alert("silahkan login terlebih dahulu");
 }
 
 async function getCardDetails() {
@@ -307,11 +277,8 @@ async function getCardDetails() {
   const result = getData.find((item) => item.id == id);
   console.log(result);
 
-  renderDetail("detailsProduct", result);  
+  renderDetail("detailsProduct", result);
   randomRecomendation(getData);
-  randomRecomendation(getData);
-  console.log("isi cart", cart);
-  console.log("isi wishlist", myWishlist);
 }
 
 getCardDetails();

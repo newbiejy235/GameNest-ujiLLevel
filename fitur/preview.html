@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameNest</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+  </head>
+  <body class="bg-[#0B0E14] text-gray-300">
+    <div class="flex p-6 gap-10">
+      <section
+        class="w-72 bg-[#12161D] h-screen rounded-3xl flex flex-col p-6 shadow-2xl border border-white/5"
+      >
+        <div class="flex items-center mt-2 mb-5 text-white p-2 mr-2">
+          <img
+            class="w-full object-cover"
+            src="../asset/background-game.png"
+            alt=""
+          />
+        </div>
+
+        <div class="space-y-10 mb-8">
+          <a
+            class="flex items-center gap-4 px-4 py-3 bg-[#1F2630] text-white rounded-xl transition-all border border-white/5"
+            href="./preview.html"
+          >
+            <span><i data-lucide="house"></i> </span>
+            <h1>Home</h1>
+          </a>
+        </div>
+
+        <div class="px-4 mb-4 flex items-center gap-3">
+          <i class="w-5 h-5 text-gray-500" data-lucide="layout-grid"></i>
+          <p class="text-[10px] font-bold uppercase text-gray-500">
+            Categories
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 space-y-5 overflow-y-auto custom-scrollbar"
+        >
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('RPG');
+              scrollToContainer();
+            "
+          >
+            RPG
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Open World');
+              scrollToContainer();
+            "
+          >
+            Open World
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Action');
+              scrollToContainer();
+            "
+          >
+            Action
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Souls-like');
+              scrollToContainer();
+            "
+          >
+            Souls-like
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Roguelike');
+              scrollToContainer();
+            "
+          >
+            Roguelike
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Simulation');
+              scrollToContainer();
+            "
+          >
+            Simulation
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Casual');
+              scrollToContainer();
+            "
+          >
+            Casual
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('FPS');
+              scrollToContainer();
+            "
+          >
+            FPS
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Competitive');
+              scrollToContainer();
+            "
+          >
+            Competitive
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('MOBA');
+              scrollToContainer();
+            "
+          >
+            MOBA
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Sandbox');
+              scrollToContainer();
+            "
+          >
+            Sandbox
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Adventure');
+              scrollToContainer();
+            "
+          >
+            Adventure
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Party');
+              scrollToContainer();
+            "
+          >
+            Party
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Multiplayer');
+              scrollToContainer();
+            "
+          >
+            Multiplayer
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Racing');
+              scrollToContainer();
+            "
+          >
+            Racing
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Horror');
+              scrollToContainer();
+            "
+          >
+            Horror
+          </button>
+          <button
+            class="w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-white/5 rounded-lg text-left transition-colors"
+            onclick="
+              category('Co-op');
+              scrollToContainer();
+            "
+          >
+            Co-op
+          </button>
+        </div>
+      </section>
+
+      <div class="w-full flex-1 space-y-24">
+        <nav
+          class="w-full h-32 rounded items-center flex gap-5 justify-between"
+        >
+          <form>
+            <input
+              id="userSearch"
+              class="h-14 w-96 bg-[#12161D] rounded-3xl px-4 border border-white/15 hover:bg-white/8"
+              type="search"
+              placeholder="search..."
+            />
+          </form>
+          <div class="flex gap-5">
+            <button
+              disabled
+              class="h-14 w-14 bg-[#12161D] border border-white/15 rounded-2xl flex items-center justify-center hover:cursor-not-allowed hover:bg-white/8"
+            >
+              <i data-lucide="shopping-bag"></i>
+            </button>
+            <button
+              disabled
+              class="h-14 w-14 bg-[#12161D] border border-white/15 rounded-2xl flex items-center justify-center hover:cursor-not-allowed hover:bg-white/8"
+            >
+              <i data-lucide="heart-plus"></i>
+            </button>
+
+            <div
+              class="flex items-center w-40 h-14 rounded-2xl bg-[#12161D] border border-white/15 px-4 gap-5"
+            >
+              <i data-lucide="circle-user"></i>
+              <h1 id="message">Guest</h1>
+            </div>
+            <span class="flex items-center text-sm gap-2">
+              <a
+                class="hover:-translate-y-0.5 bg-sky-500 px-4 py-2 rounded text-white"
+                href="./fitur/login.html"
+                >Login</a
+              >
+              <a
+                class="hover:-translate-y-0.5 bg-green-500 px-4 py-2 rounded text-white"
+                href="./fitur/login.html"
+                >Register</a
+              >
+            </span>
+          </div>
+        </nav>
+
+        <div
+          class="flex justify-center bg-[url('https://i.pinimg.com/736x/c7/10/ac/c710ac6a83148408693a7bba163bb18a.jpg')] w-full p-4 rounded-2xl"
+        >
+          <div class="w-full max-w-[1200px]">
+            <h1
+              class="mb-5 text-white bg-green-500 w-60 rounded-2xl px-4 font-bold text-xl"
+            >
+              BIG DISCOUNT 🎉🎉
+            </h1>
+
+            <div
+              class="flex gap-5 overflow-x-auto pb-4 custom-scrollbar"
+              id="render"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-center bg-[url('https://i.pinimg.com/736x/c7/10/ac/c710ac6a83148408693a7bba163bb18a.jpg')] w-full p-4 rounded-2xl"
+        >
+          <div class="w-full max-w-[1200px]">
+            <h1
+              class="mb-5 text-white bg-green-500 w-60 rounded-2xl px-4 font-bold text-xl"
+            >
+              ✨RECOMENDATION✨
+            </h1>
+
+            <div
+              class="flex gap-5 overflow-x-auto pb-4 custom-scrollbar"
+              id="rekomendasi"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1">
+      <span id="seeAll" class="hidden items-center px-32">
+        <i data-lucide="circle-small"></i>
+        <a
+          class="text-[10px] font-bold uppercase text-gray-500 hover:text-blue-500 hover:underline hover:translate-y-0.5"
+          href="./home2.html"
+          >See all</a
+        >
+      </span>
+      <div id="game-container" class="flex justify-center">
+        <div
+          class="grid grid-cols-5 gap-16 p-3 rounded-2xl"
+          id="homePages"
+        ></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../src/preview.js"></script>
+  </body>
+</html>
