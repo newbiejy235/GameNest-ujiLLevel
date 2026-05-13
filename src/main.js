@@ -25,13 +25,13 @@ let ulasan = [
       "Fast-paced combat, futuristic weapons, and intense multiplayer battles make Cyber Hunters one of the most exciting competitive experiences for modern gamers.",
 
     images1:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop",
 
     images2:
-      "https://i.pinimg.com/736x/c0/06/ec/c006ecd5410a894598f47337154e2dd4.jpg",
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
 
     images3:
-      "https://i.pinimg.com/736x/2c/ae/1c/2cae1ce405baa158b359ee8483da60cf.jpg",
+      "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200&auto=format&fit=crop",
   },
 
   {
